@@ -1,0 +1,28 @@
+{
+  "name": "tingle-dialog",
+  "version": "0.0.0",
+  "description": "dialog component for tingle",
+  "author": "minjie",
+  "main": "src/index.js",
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "keywords": [
+    "tingle-dialog",
+    "Dialog",
+    "tingle-dialog",
+    "Dialog",
+    "pop"
+  ],
+  "license": "MIT",
+  "screenshots": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "dist",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

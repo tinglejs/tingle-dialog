@@ -1,0 +1,47 @@
+/**
+ * Dialog Component Style for tingle
+ * @author minjie
+ *
+ * Copyright 2014-2015, Tingle Team, Alinw.
+ * All rights reserved.
+ */
+
+// tingle-style's utils
+@require '../node_modules/tingle-style/src/var'
+
+.tDialog
+    padding-top rem(40)
+    background rgba(238, 238, 238, 0.9)
+    border-radius rem(10)
+.tDialogTitle
+    color #424242
+    font-size rem(32)
+    font-weight bold 
+.tDialogContent
+    padding rem(26) 0
+    line-height rem(44)
+    font-size rem(24)
+    width 80%
+    margin 0 auto
+    color #757575
+.tDialogOperation
+    border-top 1px solid #d2d2d2
+    height rem(100)
+    font-size rem(32)
+    line-height rem(100)
+    > div
+        border-left 1px solid #d2d2d2
+    > div:first-child
+        border-left 0
+    &.hover
+        background rgba(210, 210, 210, 0.9)
+.tDialogPrimary
+    color #fb8c00
+.tDialogSecondary
+    color #bdbdbd
+
+.hairline
+    .tDialogOperation
+        > div
+            border-top-width .5px
+            border-bottom-width .5px

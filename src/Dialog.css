@@ -1,0 +1,52 @@
+/**
+ * Dialog Component Style for tingle
+ * @author minjie
+ *
+ * Copyright 2014-2015, Tingle Team, Alinw.
+ * All rights reserved.
+ */
+.tDialog {
+  padding-top: 0.533333333333333rem;
+  background: rgba(238,238,238,0.9);
+  border-radius: 0.133333333333333rem;
+}
+.tDialogTitle {
+  color: #424242;
+  font-size: 0.426666666666667rem;
+  font-weight: bold;
+}
+.tDialogContent {
+  padding: 0.346666666666667rem 0;
+  line-height: 0.586666666666667rem;
+  font-size: 0.32rem;
+  width: 80%;
+  margin: 0 auto;
+  color: #757575;
+}
+.tDialogOperation {
+  border-top: 1px solid #d2d2d2;
+  height: 1.333333333333333rem;
+  font-size: 0.426666666666667rem;
+  line-height: 1.333333333333333rem;
+}
+.tDialogOperation > div {
+  border-left: 1px solid #d2d2d2;
+}
+.tDialogOperation > div:first-child {
+  border-left: 0;
+}
+.tDialogOperation.hover {
+  background: rgba(210,210,210,0.9);
+}
+.tDialogPrimary {
+  color: #fb8c00;
+}
+.tDialogSecondary {
+  color: #bdbdbd;
+}
+.hairline .tDialogOperation > div {
+  border-top-width: 0.5px;
+  border-bottom-width: 0.5px;
+}
+
+/*# sourceMappingURL=Dialog.css.map */
