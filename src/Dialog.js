@@ -8,6 +8,7 @@
 
 let classnames = require('classnames');
 let Layer = require('tingle-layer');
+let Context = require('tingle-context');
 
 class Dialog extends React.Component {
 
@@ -59,8 +60,8 @@ class Dialog extends React.Component {
             [t.props.className]: !!t.props.className
         };
 
-        btn = buttons && buttons.map( function (item, i) {
-            let callback = item.callback || function () {};
+        btn = buttons && buttons.map((item, i) => {
+            let callback = item.callback || Context.noop;
             return <div key={'tDialogButtonKey' + i} 
                     className={"tFB1" + (item.primary ?  " tDialogPrimary" : " tDialogSecondary")} 
                     onClick={t.handleClick.bind(t, callback)}>
@@ -100,6 +101,7 @@ Dialog.defaultProps = {
 
 // http://facebook.github.io/react/docs/reusable-components.html
 Dialog.propTypes = {
+    buttons: React.PropTypes.array,
     mask: React.PropTypes.bool,
     show: React.PropTypes.bool,
     title: React.PropTypes.string
@@ -111,7 +113,7 @@ var doc = document;
 
 Dialog.global = null;
 
-function show(options) {
+var show = (options) => {
     // 只有首次全局调用时，才会创建全局实例
     if (!Dialog.global) {
         var wrapper = doc.getElementById(WRAPPER_ID);
@@ -128,7 +130,7 @@ function show(options) {
     Dialog.global.show(options);
 }
 
-Dialog.alert = function(options) {
+Dialog.alert = (options) => {
     options.buttons = [{
         children: options.confirmText || '确定',
         callback: options.onConfirm,
@@ -137,7 +139,7 @@ Dialog.alert = function(options) {
     show(options);
 }
 
-Dialog.confirm = function(options) {
+Dialog.confirm = (options) => {
     options.buttons = [{
         children: options.cancelText || '取消',
         callback: options.onCancel

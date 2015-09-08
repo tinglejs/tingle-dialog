@@ -6,11 +6,11 @@
 
 效果图:
 
-![效果图](http://gtms02.alicdn.com/tps/i2/TB1u7edIVXXXXaAXXXXHStn1XXX-396-555.png)
+![效果图](https://gtms02.alicdn.com/tps/i2/TB1u7edIVXXXXaAXXXXHStn1XXX-396-555.png_200x200.jpg)
 
 
 ## Simple Usage
-```
+```javascript
 Dialog.alert({
 	title: '测试',
 	children: '我是测试我是测试我是测试我是测试我是测试',
