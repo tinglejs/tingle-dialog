@@ -99,10 +99,10 @@ class Demo extends React.Component {
                 console.log('pop button');
             },
             primary: true
-        }]
+        }];
 
         return (
-            <div>
+            <div className="demoWrap">
                 <Button className="demo" onClick={this.handleAlert.bind(this)}>alert</Button>
                 <Button className="demo" onClick={this.handleConfirm.bind(this)}>confirm</Button>
                 <Button className="demo" onClick={this.handleTitle.bind(this)}>no title</Button>
@@ -120,6 +120,5 @@ class Demo extends React.Component {
             </div>
         );
     }
-};
-
+}
 module.exports = Demo;

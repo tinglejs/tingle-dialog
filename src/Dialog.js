@@ -50,9 +50,7 @@ class Dialog extends React.Component {
     render() {
         let t = this;
         let btn = '';
-        let {
-            className, show, width, ...other
-        } = t.props;
+        let {className, show, width, ...other} = t.props;
         let title = t.state.title;
         let buttons = t.state.buttons;
         let classSet = {
@@ -60,13 +58,21 @@ class Dialog extends React.Component {
             [t.props.className]: !!t.props.className
         };
 
-        btn = buttons && buttons.map((item, i) => {
+        let btnsCount = buttons.length;
+        btn = buttons && buttons.map(function (item, i) {
             let callback = item.callback || Context.noop;
-            return <div key={'tDialogButtonKey' + i} 
-                    className={"tFB1" + (item.primary ?  " tDialogPrimary" : " tDialogSecondary")} 
-                    onClick={t.handleClick.bind(t, callback)}>
+            return <div key={'tDialogButtonKey' + i}
+                className={classnames("tFB1 tDialogButton tTE",
+                    {
+                        "tDialogPrimary": item.primary,
+                        "tDialogSecondary": !item.primary,
+                        "tDialogBRBL5": i===0||btnsCount===1,
+                        "tDialogBRBR5": i===1||i===btnsCount-1
+                    }
+                )}
+                onClick={t.handleClick.bind(t, callback)}>
                     {item.children}
-                </div>
+            </div>
         });
 
 
@@ -79,13 +85,13 @@ class Dialog extends React.Component {
                         {t.state.children}
                     </div> 
 
-                    <div className="tDialogOperation tFBH tFAC">
+                    <div className="tDialogOperation tTE tFBH tFAC">
                         {btn}
                     </div>
                 </div>
             </Layer>
-        );
-    }
+                )
+        }
 }
 
 Dialog.defaultProps = {
@@ -97,7 +103,7 @@ Dialog.defaultProps = {
     mask: true,
     show: false,
     title: ''
-}
+};
 
 // http://facebook.github.io/react/docs/reusable-components.html
 Dialog.propTypes = {
@@ -105,7 +111,7 @@ Dialog.propTypes = {
     mask: React.PropTypes.bool,
     show: React.PropTypes.bool,
     title: React.PropTypes.string
-}
+};
 
 
 var WRAPPER_ID = '__TingleGlobalDialog__';
@@ -113,12 +119,11 @@ var doc = document;
 
 Dialog.global = null;
 
-var show = (options) => {
+var show = function(options) {
     // 只有首次全局调用时，才会创建全局实例
     if (!Dialog.global) {
         var wrapper = doc.getElementById(WRAPPER_ID);
-        var {...other
-        } = options;
+        var {...other} = options;
 
         if (!wrapper) {
             wrapper = doc.createElement('div');
@@ -126,20 +131,20 @@ var show = (options) => {
             doc.body.appendChild(wrapper);
         }
         Dialog.global = React.render(<Dialog {...other}  />, wrapper)
-    }
+    };
     Dialog.global.show(options);
 }
 
-Dialog.alert = (options) => {
+Dialog.alert = function(options) {
     options.buttons = [{
         children: options.confirmText || '确定',
         callback: options.onConfirm,
         primary: true
     }];
     show(options);
-}
+};
 
-Dialog.confirm = (options) => {
+Dialog.confirm = function(options) {
     options.buttons = [{
         children: options.cancelText || '取消',
         callback: options.onCancel
@@ -149,9 +154,7 @@ Dialog.confirm = (options) => {
         primary: true
     }];
     show(options);
-}
-
-
+};
 
 Dialog.displayName = 'Dialog';
 

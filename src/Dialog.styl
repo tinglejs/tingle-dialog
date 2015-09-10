@@ -10,38 +10,51 @@
 @require '../node_modules/tingle-style/src/var'
 
 .tDialog
-    padding-top rem(40)
-    background rgba(238, 238, 238, 0.9)
-    border-radius rem(10)
+  padding-top 13px
+  background rgba(238, 238, 238, 0.9)
+  border-radius 5px
+
 .tDialogTitle
-    color #424242
-    font-size rem(32)
-    font-weight bold 
+  color #424242
+  font-size 16px
+  font-weight bold
+  padding-bottom 13px
+  padding-top 7px
+
 .tDialogContent
-    padding rem(26) 0
-    line-height rem(44)
-    font-size rem(24)
-    width 80%
-    margin 0 auto
-    color #757575
+  padding 0 15px 13px
+  line-height 22px
+  font-size 12px
+  margin 0 auto
+  color #757575
+
 .tDialogOperation
-    border-top 1px solid #d2d2d2
-    height rem(100)
-    font-size rem(32)
-    line-height rem(100)
-    > div
-        border-left 1px solid #d2d2d2
-    > div:first-child
-        border-left 0
+  border-top 1px solid #d2d2d2
+  height 50px
+  font-size 16px
+  line-height 50px
+  .tDialogButton
+    border-left 1px solid #d2d2d2
     &.hover
-        background rgba(210, 210, 210, 0.9)
+      background rgba(238, 238, 238, 0.9)
+
+    &:first-child
+      border-left 0
+
+.tDialogBRBL5
+  border-bottom-left-radius 5px
+
+.tDialogBRBR5
+  border-bottom-right-radius 5px
+
 .tDialogPrimary
-    color #fb8c00
+  color #fb8c00
+
 .tDialogSecondary
-    color #bdbdbd
+  color #757575
 
 .hairline
-    .tDialogOperation
-        > div
-            border-top-width .5px
-            border-bottom-width .5px
+  .tDialogOperation
+    > div
+      border-top-width .5px
+      border-bottom-width .5px

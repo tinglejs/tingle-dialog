@@ -1,13 +1,8 @@
 # tingle-dialog [![npm version](https://badge.fury.io/js/tingle-dialog.svg)](http://badge.fury.io/js/tingle-dialog)
 
+对话框
 
-## TL;DR
-
-
-效果图:
-
-![效果图](https://gtms02.alicdn.com/tps/i2/TB1u7edIVXXXXaAXXXXHStn1XXX-396-555.png_200x200.jpg)
-
+<img src="https://img.alicdn.com/tps/TB10ef5JpXXXXXZXFXXXXXXXXXX-750-1254.png" width="375"/>
 
 ## Simple Usage
 ```javascript
@@ -47,6 +42,7 @@ Dialog.confirm({
 |children| string | required |-|按钮的内容|
 |callback| function |optional |-|点击按钮的回调, 返回false就不会自动关闭对话框|
 |primary| boolean | optional |false|是否作为主按钮|
+
 ## API接口
 
 ### Dialog.alert(options)
