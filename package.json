@@ -1,7 +1,7 @@
 {
   "name": "tingle-dialog",
   "version": "0.2.0",
-  "description": "a dialog with alert and comfirm",
+  "description": "对话框，提供定位和遮罩。",
   "repository": "https://github.com/tinglejs/tingle-dialog.git",
   "author": {
     "name": "minjie",
@@ -18,7 +18,8 @@
   "keywords": [
     "tingle-dialog",
     "dialog",
-    "pop"
+    "pop",
+    "对话框"
   ],
   "dependencies": {
     "classnames": "^2.1.2",
