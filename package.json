@@ -1,6 +1,6 @@
 {
   "name": "tingle-dialog",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "对话框，提供定位和遮罩。",
   "repository": "https://github.com/tinglejs/tingle-dialog.git",
   "author": {
