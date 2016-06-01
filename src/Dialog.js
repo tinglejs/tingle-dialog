@@ -35,6 +35,10 @@ class Dialog extends React.Component {
         this.setState(state);
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.setState({children : nextProps.children})
+    }
+
     hide() {
         this.state.show = false;
         this.setState(this.state);
@@ -83,7 +87,7 @@ class Dialog extends React.Component {
 
                     <div className="tDialogContent">
                         {t.state.children}
-                    </div> 
+                    </div>
 
                     <div className="tDialogOperation tTE tFBH tFAC">
                         {btn}

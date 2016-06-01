@@ -14,9 +14,10 @@ class Demo extends React.Component {
 
     constructor(props) {
         super(props);
-         
+
         this.state = {
-            show: true
+            show: true,
+            content: '测测测测'
         }
     }
 
@@ -44,7 +45,7 @@ class Demo extends React.Component {
             title: '测试',
             children: '我是测试内容我是测试内容我是测试内容我是测试内容我是测试内容我是测试内容我是测试内',
             onConfirm() {
-                console.log('multi lines confirm'); 
+                console.log('multi lines confirm');
             }
         });
     }
@@ -70,7 +71,11 @@ class Demo extends React.Component {
         this.refs.popDialog.show();
     }
 
-     
+    _onChange(e) {
+        e.preventDefault();
+        this.setState({content: e.target.value});
+    }
+
     render() {
         let t = this;
         let buttons = [{
@@ -110,7 +115,7 @@ class Demo extends React.Component {
                 <Button className="demo" onClick={this.handlePage.bind(this)}>page</Button>
                 <Button className="demo" onClick={this.handleMultiLayer.bind(this)}>multi layer</Button>
                 <Dialog ref="mainDialog" title="页面上" buttons={buttons}>
-                    我是测试内容我是测试内容我是测试内容我是测试内容我是测试内容我是测试内容我是测试内
+                    <input onChange={this._onChange.bind(this)} value={this.state.content}/>
                 </Dialog>
                 <Dialog width={300} top={'55%'} ref="popDialog" buttons={popButton}>
                     <div onClick={this.handleTitle.bind(this)}>
